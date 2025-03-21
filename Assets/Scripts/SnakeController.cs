@@ -3,19 +3,24 @@ using UnityEngine;
 
 public class SnakeController : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed = 5f;
+    [SerializeField] private float moveSpeed = 4f;
     [SerializeField] private Transform bodyPrefab;
     [SerializeField] private int initialSnakeSize = 3;
 
-    private Vector2 moveDirection;
+    public Vector2 moveDirection;
     private List<Transform> bodyParts = new List<Transform>();
-    private Vector2 lastDirection;
+    public Vector2 lastDirection;
 
     private bool isShielded = false;
     private float baseSpeed;
 
     private void Start()
     {
+        if(baseSpeed == 0)
+        {
+        baseSpeed = 4f; 
+        }
+        moveSpeed = baseSpeed;
         moveDirection = Vector2.right;
         lastDirection = moveDirection;
 
@@ -37,7 +42,7 @@ public class SnakeController : MonoBehaviour
         HandleScreenWrap();
     }
 
-    private void HandleInput()
+    public virtual void HandleInput()
     {
         if (Input.GetKey(KeyCode.W) && lastDirection != Vector2.down)
             moveDirection = Vector2.up;
@@ -150,13 +155,15 @@ public class SnakeController : MonoBehaviour
 
     public void SpeedUp(float speedUpFactor)
     {
-        if (baseSpeed == 0) baseSpeed = moveSpeed;
-        moveSpeed *= speedUpFactor;
+        if(baseSpeed == 0){
+            baseSpeed =4f;
+        }
+        moveSpeed = baseSpeed;
     }
 
     public void ResetSpeed()
     {
-        if (baseSpeed != 0) moveSpeed = baseSpeed;
+        if (baseSpeed != 0) moveSpeed = 4f;
     }
     public void ShrinkSnake()
     {

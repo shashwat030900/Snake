@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 3487614041490294459}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.08150681, y: 0.4212327, z: 0}
-  m_LocalScale: {x: 0.58, y: 0.58, z: 0.58}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -74,8 +74,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.8396226, g: 0.37756607, b: 0.37756607, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 2309fe1ad1c288a47a4d3f4b1229df02, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -99,3 +99,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 1
   bodyPrefab: {fileID: 0}
+  initialSnakeSize: 3
+  moveDirection: {x: 0, y: 0}
+  lastDirection: {x: 0, y: 0}

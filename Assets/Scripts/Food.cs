@@ -24,7 +24,7 @@ public class Food : MonoBehaviour
                 {
                     snake.GrowSnake();
                 }
-                GameManager.Instance.IncreaseScore(massChangeAmount);
+                ScoreController.IncreaseScore(10);
             }
             else
             {
@@ -32,7 +32,7 @@ public class Food : MonoBehaviour
                 {
                     snake.ShrinkSnake();
                 }
-                GameManager.Instance.DecreaseScore(massChangeAmount);
+                ScoreController.IncreaseScore(5);
             }
 
             Destroy(gameObject);
